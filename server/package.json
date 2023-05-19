@@ -1,0 +1,24 @@
+{
+    "name": "awesomeproject",
+    "version": "1.0.0",
+    "main": "node_modules/expo/AppEntry.js",
+    "scripts": {
+      "start": "nodemon index.js",
+      "build": "echo \"No build specified\" && exit 1",
+      "test": "echo \"No test specified\" && exit 1"
+    },
+    "dependencies": {
+      "concurrently": "^8.0.1",
+      "dotenv": "^16.0.3",
+      "express": "^4.18.2",
+      "nodemon": "^2.0.22",
+      "pg": "^8.11.0"
+    },
+    "devDependencies": {
+      "@babel/core": "^7.20.0",
+      "@react-native-community/eslint-config": "^3.2.0",
+      "eslint": "^8.37.0"
+    },
+    "private": true
+  }
+  
