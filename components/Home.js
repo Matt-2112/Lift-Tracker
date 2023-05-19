@@ -14,6 +14,7 @@ const Home = ( {navigation} ) => {
                />
 
                <Button
+               style={styles.buttons}
                 title="Log"
                 onPress={() => {navigation.navigate('Log')}}
                />
@@ -41,6 +42,10 @@ const styles = StyleSheet.create({
         marginTop: 20,
         height: 480,
         width: 440,
+    },
+    buttons: {
+       marginTop: 10
+
     }
 })
 
