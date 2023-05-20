@@ -2,7 +2,7 @@ import React from "react";
 import { View, Text, Image, StyleSheet, SafeAreaView, Button, Pressable } from "react-native"
 
 const onPress = async () => {
-    await fetch('http://47.229.203.172:3000/api/history')
+    await fetch('https://cyan-wandering-tortoise.cyclic.app/api/history')
 };
 
 const PrevLog = ({ navigation }) => {
