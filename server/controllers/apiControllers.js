@@ -11,7 +11,9 @@ apiController.getUserHistory = (req, res, next) => {
         console.log(response.rows[0]);
         res.locals = response.rows;
         next();
-    })
+    });
 };
+
+
 
 module.exports = apiController;

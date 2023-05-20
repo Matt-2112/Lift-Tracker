@@ -5,6 +5,8 @@ const onPress = async () => {
     await fetch('https://cyan-wandering-tortoise.cyclic.app/api/history')
 };
 
+//use effect, grab last 7 workouts to display (order by + limit sql query)
+
 const PrevLog = ({ navigation }) => {
     return(
         <View style = {styles.container}>
