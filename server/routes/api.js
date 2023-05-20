@@ -7,7 +7,7 @@ const apiController = require('../controllers/apiControllers.js')
 
 
 router.get('/history', apiController.getUserHistory, (req, res) => {
-    res.sendStatus(200);
+    res.send(res.locals).status(200)
 });
 
 module.exports = router
