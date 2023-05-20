@@ -10,7 +10,9 @@ apiController.getUserHistory = (req, res, next) => {
         }
         console.log(response.rows[0]);
         next();
-    })
+    });
 };
+
+
 
 module.exports = apiController;
