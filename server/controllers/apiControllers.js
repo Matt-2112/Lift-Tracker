@@ -3,7 +3,7 @@ const db  =require('../models/pgModel.js')
 const apiController = {};
 
 apiController.getUserHistory = (req, res, next) => {
-    const query = 'SELECT * FROM sessions WHERE user_id = 1;';
+    const query = 'SELECT * FROM sessions WHERE (user_id = 1) ORDER BY date LIMIT 10;';
     db.query(query, (err, response) => {
         if(err) {
             return next(err);
