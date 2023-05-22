@@ -8,25 +8,12 @@ const onPress = async () => {
 
 //use effect, grab last 7 workouts to display (order by + limit sql query)
 
-const PrevLog = ({ navigation }) => {
-
-    const [record, setRecord] = useState('hi');
-
-    const getRecord = async () => {
-        let fetched = (await fetch('https://cyan-wandering-tortoise.cyclic.app/api/history'));
-        const parsed = await fetched.json();
-        console.log(parsed);
-        setRecord([parsed[0].date]);
-    };
-
-    useEffect(() => {
-        getRecord();
-    }, [])
+const PrevLog = (props, { navigation } ) => {
 
     return(
         <View style = {styles.container}>
             <Pressable onPress={onPress}>
-                <Text>This is the date of your workout! {record}</Text>
+                <Text>This is the date of your workout! {props.info.date}</Text>
             </Pressable>
         </View>
     )

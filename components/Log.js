@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import { View, Text, Image, StyleSheet, SafeAreaView, Button, Pressable } from "react-native"
 
 import PrevLog from "./PrevLog";
@@ -6,6 +6,29 @@ import PrevLog from "./PrevLog";
 
 
 const Log = ({navigation}) => {
+
+    const [record, setRecord] = useState([]);
+
+    const getRecord = async () => {
+        let fetched = (await fetch('https://cyan-wandering-tortoise.cyclic.app/api/history'));
+        const parsed = await fetched.json();
+        console.log(parsed);
+        setRecord(parsed);
+    };
+
+    const logs = [];
+
+    useEffect(() => {
+        getRecord();
+
+    }, [])
+
+    record.forEach(el => {
+        console.log('els', el)
+        logs.push(<PrevLog info={el}/>)
+    });
+
+
     return(
         <SafeAreaView>
          <View style={styles.container}>
@@ -27,8 +50,7 @@ const Log = ({navigation}) => {
 
             </View>
 
-            <PrevLog></PrevLog>
-            <PrevLog/>
+            {logs}
             
          </View>
         </SafeAreaView>
